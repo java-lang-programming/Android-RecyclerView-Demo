@@ -18,6 +18,13 @@
         android:layout_height="wrap_content"
         android:text="RecyclerView" />
 
+    <Button
+        android:id="@+id/recyclerView_swiped_btn"
+        android:layout_below="@+id/recyclerView_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView swiped" />
+
     <!--<Button
         android:id="@+id/recyclerView_divided_line_btn"
         android:layout_below="@+id/recyclerView_btn"

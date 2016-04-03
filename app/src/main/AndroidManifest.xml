@@ -21,6 +21,10 @@
         <activity
             android:name=".ui.RecyclerViewActivity"
             android:label="@string/title_activity_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.RecyclerViewSwipeActivity"
+            android:label="@string/title_activity_recycler_view_swipe"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

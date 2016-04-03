@@ -33,6 +33,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
+import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,6 +80,17 @@ public class MainActivity extends AppCompatActivity
 //
 //            }
 //        });
+
+        Button recyclerViewSwipedBtn = (Button)findViewById(R.id.recyclerView_swiped_btn);
+        recyclerViewSwipedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerViewSwipeIntent = new Intent(MainActivity.this,
+                        RecyclerViewSwipeActivity.class);
+                startActivity(recyclerViewSwipeIntent);
+            }
+        });
+
     }
 
     @Override
