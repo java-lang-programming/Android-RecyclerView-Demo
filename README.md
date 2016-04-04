@@ -12,4 +12,4 @@ http://java-lang-programming.com/
 
 Credits
 ------------
-Developed by java-lang-programming (MasayaSuzuki) - paulburke.co
+Developed by java-lang-programming
