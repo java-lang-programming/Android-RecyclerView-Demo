@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity">
+    tools:context="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,11 +21,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <fragment android:name="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewFragment"
-        android:id="@+id/recycler_view_normal_frag"
+    <fragment android:name="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineFragment"
+        android:id="@+id/recycler_view_swipe_frag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

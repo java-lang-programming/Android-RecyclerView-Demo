@@ -33,6 +33,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
+import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -74,19 +75,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-//        Button recyclerViewDividedLineBtn = (Button)findViewById(R.id.recyclerView_divided_line_btn);
-//        recyclerViewDividedLineBtn.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//            }
-//        });
-
         Button recyclerViewSwipedBtn = (Button)findViewById(R.id.recyclerView_swiped_btn);
         recyclerViewSwipedBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent recyclerViewIntent = new Intent(MainActivity.this,
+                        RecyclerViewSwipeActivity.class);
+                startActivity(recyclerViewIntent);
+            }
+        });
+
+        Button recyclerViewDividerLineBtn = (Button)findViewById(R.id.recyclerView_divider_line_btn);
+        recyclerViewDividerLineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent recyclerViewSwipeIntent = new Intent(MainActivity.this,
-                        RecyclerViewSwipeActivity.class);
+                        RecyclerViewDividerLineActivity.class);
                 startActivity(recyclerViewSwipeIntent);
             }
         });

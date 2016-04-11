@@ -1,13 +1,11 @@
 package com.java_lang_programming.android_recycleview_demo.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,17 +13,15 @@ import android.view.ViewGroup;
 import com.java_lang_programming.android_recycleview_demo.R;
 import com.java_lang_programming.android_recycleview_demo.ui.dummy.DummyContent;
 
-import java.util.List;
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link RecyclerViewSwipeFragment.OnFragmentInteractionListener} interface
+ * {@link RecyclerViewDividerLineFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RecyclerViewSwipeFragment#newInstance} factory method to
+ * Use the {@link RecyclerViewDividerLineFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecyclerViewSwipeFragment extends RecyclerViewFragment {
+public class RecyclerViewDividerLineFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -35,11 +31,9 @@ public class RecyclerViewSwipeFragment extends RecyclerViewFragment {
     private String mParam1;
     private String mParam2;
 
-    private List<DummyContent.DummyItem> mList;
-    private  MyItemRecyclerViewAdapter mAdapter;
     private OnFragmentInteractionListener mListener;
 
-    public RecyclerViewSwipeFragment() {
+    public RecyclerViewDividerLineFragment() {
         // Required empty public constructor
     }
 
@@ -49,10 +43,11 @@ public class RecyclerViewSwipeFragment extends RecyclerViewFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment RecyclerViewSwipeFragment.
+     * @return A new instance of fragment RecyclerViewDividerLineFragment.
      */
-    public static RecyclerViewSwipeFragment newInstance(String param1, String param2) {
-        RecyclerViewSwipeFragment fragment = new RecyclerViewSwipeFragment();
+    // TODO: Rename and change types and number of parameters
+    public static RecyclerViewDividerLineFragment newInstance(String param1, String param2) {
+        RecyclerViewDividerLineFragment fragment = new RecyclerViewDividerLineFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,43 +58,28 @@ public class RecyclerViewSwipeFragment extends RecyclerViewFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mList = DummyContent.ITEMS;
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-
-        // init swipe to dismiss logic
-        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
-                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                mList.remove(viewHolder.getAdapterPosition());
-                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-            }
-
-            @Override
-            public void onChildDrawOver(Canvas c, RecyclerView recyclerView,
-                                        RecyclerView.ViewHolder viewHolder, float dX, float dY,
-                                        int actionState, boolean isCurrentlyActive) {
-            }
-        });
 
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            mAdapter = new MyItemRecyclerViewAdapter(DummyContent.ITEMS);
-            recyclerView.setAdapter(mAdapter);
-            swipeToDismissTouchHelper.attachToRecyclerView(recyclerView);
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS));
+
+            RecyclerView.ItemDecoration itemDecoration = new
+                    DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST);
+            recyclerView.addItemDecoration(itemDecoration);
         }
         return view;
     }
@@ -133,7 +113,7 @@ public class RecyclerViewSwipeFragment extends RecyclerViewFragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

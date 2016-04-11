@@ -25,6 +25,10 @@
         <activity
             android:name=".ui.RecyclerViewSwipeActivity"
             android:label="@string/title_activity_recycler_view_swipe"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.RecyclerViewDividerLineActivity"
+            android:label="@string/title_activity_recycler_view_divider_line"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
