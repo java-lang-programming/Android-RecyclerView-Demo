@@ -32,6 +32,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.java_lang_programming.android_recycleview_demo.ui.CustomRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        Button recyclerViewBtn = (Button)findViewById(R.id.recyclerView_btn);
+        Button recyclerViewBtn = (Button) findViewById(R.id.recyclerView_btn);
         recyclerViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button recyclerViewSwipedBtn = (Button)findViewById(R.id.recyclerView_swiped_btn);
+        Button recyclerViewSwipedBtn = (Button) findViewById(R.id.recyclerView_swiped_btn);
         recyclerViewSwipedBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent recyclerViewIntent = new Intent(MainActivity.this,
@@ -84,13 +85,23 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button recyclerViewDividerLineBtn = (Button)findViewById(R.id.recyclerView_divider_line_btn);
+        Button recyclerViewDividerLineBtn = (Button) findViewById(R.id.recyclerView_divider_line_btn);
         recyclerViewDividerLineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent recyclerViewSwipeIntent = new Intent(MainActivity.this,
                         RecyclerViewDividerLineActivity.class);
                 startActivity(recyclerViewSwipeIntent);
+            }
+        });
+
+        Button customRecyclerViewBtn = (Button) findViewById(R.id.custom_recyclerView_btn);
+        customRecyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent customRecyclerViewBtnIntent = new Intent(MainActivity.this,
+                        CustomRecyclerViewActivity.class);
+                startActivity(customRecyclerViewBtnIntent);
             }
         });
 

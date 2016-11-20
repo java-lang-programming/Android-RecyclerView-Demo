@@ -32,4 +32,11 @@
         android:layout_height="wrap_content"
         android:text="RecyclerView divider_line" />
 
+    <Button
+        android:id="@+id/custom_recyclerView_btn"
+        android:layout_below="@+id/recyclerView_divider_line_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CustomRecyclerView" />
+
 </RelativeLayout>
