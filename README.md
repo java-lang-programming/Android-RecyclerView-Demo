@@ -20,6 +20,8 @@ English
 
 [Android Application Development. RecyclerView. Implement addition, update and deletion.](http://java-lang-programming.com/en/articles/65)
 
+[Android Application Development. Load data while scrolling the screen.](http://java-lang-programming.com/en/articles/66)
+
 日本語
 
 [Androidアプリ開発 RecyclerViewで一覧画面を作成する](http://java-lang-programming.com/ja/articles/17)
@@ -29,6 +31,8 @@ English
 [Androidアプリ開発 RecyclerViewで一覧画面の区切り線を作成する](http://java-lang-programming.com/ja/articles/19)
 
 [Androidアプリ開発 RecyclerView 追加、更新、削除の実装](http://java-lang-programming.com/ja/articles/65)
+
+[Androidアプリ開発 RecyclerView 画面スクロールしながらデータをロードする](http://java-lang-programming.com/ja/articles/66)
 
 Credits
 ------------

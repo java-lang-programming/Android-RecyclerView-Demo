@@ -33,7 +33,13 @@
         <activity
             android:name=".ui.CustomRecyclerViewActivity"
             android:label="@string/title_activity_custom_recycler_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.AutoScrollRecyclerViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.FooterRecyclerViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

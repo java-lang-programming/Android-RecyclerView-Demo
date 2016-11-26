@@ -39,4 +39,18 @@
         android:layout_height="wrap_content"
         android:text="CustomRecyclerView" />
 
+    <Button
+        android:id="@+id/auto_scroll_recyclerView_btn"
+        android:layout_below="@+id/custom_recyclerView_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AutoScrollRecyclerView" />
+
+    <Button
+        android:id="@+id/footer_recyclerView_btn"
+        android:layout_below="@+id/auto_scroll_recyclerView_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FooterRecyclerView" />
+
 </RelativeLayout>

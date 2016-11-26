@@ -17,4 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="msg" parent="Base.TextAppearance.AppCompat.Subhead"></style>
+
+    <style name="title" parent="@android:style/Theme.Dialog">
+        <item name="android:textAppearance">@android:style/TextAppearance.DialogWindowTitle</item>
+    </style>
+
 </resources>

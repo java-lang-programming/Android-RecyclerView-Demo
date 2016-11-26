@@ -32,7 +32,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.java_lang_programming.android_recycleview_demo.ui.AutoScrollRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.CustomRecyclerViewActivity;
+import com.java_lang_programming.android_recycleview_demo.ui.FooterRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
@@ -105,6 +107,25 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        Button autoScrollRecyclerViewBtn = (Button) findViewById(R.id.auto_scroll_recyclerView_btn);
+        autoScrollRecyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent autoScrollRecyclerViewBtnIntent = new Intent(MainActivity.this,
+                        AutoScrollRecyclerViewActivity.class);
+                startActivity(autoScrollRecyclerViewBtnIntent);
+            }
+        });
+
+        Button footerRecyclerViewBtn = (Button) findViewById(R.id.footer_recyclerView_btn);
+        footerRecyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent footerRecyclerViewBtnIntent = new Intent(MainActivity.this,
+                        FooterRecyclerViewActivity.class);
+                startActivity(footerRecyclerViewBtnIntent);
+            }
+        });
     }
 
     @Override

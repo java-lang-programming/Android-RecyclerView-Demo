@@ -3,6 +3,7 @@ package com.java_lang_programming.android_recycleview_demo.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,10 @@ public class CustomRecyclerViewFragment extends Fragment {
     private CustomRecyclerViewFragmentAdapter customRecyclerViewFragmentAdapter;
     private OnFragmentInteractionListener mFragmentListener;
     private List<Product> list;
+    private long offset;
+    private long autoScrollSize;
+    private boolean isLoading;
+    private static final int DEFAULT_OFFSET = 20;
 
     /**
      * Create object with singleton.
@@ -49,6 +54,7 @@ public class CustomRecyclerViewFragment extends Fragment {
         Log.d("CustomRecycler", "onCreateView");
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_item_list2, container, false);
+        initParam();
         list = new ArrayList<Product>();
 
         // Set the adapter
@@ -58,6 +64,33 @@ public class CustomRecyclerViewFragment extends Fragment {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
             customRecyclerViewFragmentAdapter = new CustomRecyclerViewFragmentAdapter(list, mFragmentListener);
             recyclerView.setAdapter(customRecyclerViewFragmentAdapter);
+            // scroll
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    super.onScrolled(recyclerView, dx, dy);
+                    Log.d("autoScrollSize", "onScrolled");
+
+                    int visibleItemCount = recyclerView.getChildCount();
+                    LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                    int totalItemCount = manager.getItemCount();
+                    int firstVisibleItem = manager.findFirstVisibleItemPosition();
+
+                    //Log.d("autoScrollSize", "visibleItemCount: " + visibleItemCount + ", totalItemCount: " + totalItemCount + ", firstVisibleItem: " + firstVisibleItem);
+
+                    int lastInScreen = firstVisibleItem + visibleItemCount;
+                    //Log.d(TAG, "lastInScreen: " + lastInScreen);
+                    if (isAutoScroll(lastInScreen)) {
+                        isLoading = true;
+                        load();
+                    }
+                }
+
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                }
+            });
         }
         return view;
     }
@@ -66,6 +99,9 @@ public class CustomRecyclerViewFragment extends Fragment {
     public void onStart() {
         Log.d("CustomRecycler", "onStart");
         super.onStart();
+        if (autoScrollSize == 0) {
+            load();
+        }
         setCountUI();
     }
 
@@ -153,6 +189,7 @@ public class CustomRecyclerViewFragment extends Fragment {
                 if (isDelete) {
                     customRecyclerViewFragmentAdapter.notifyItemRemoved(index);
                     //customRecyclerViewFragmentAdapter.notifyDataSetChanged();
+                    autoScrollSize--;
                     setCountUI();
                 }
             }
@@ -166,6 +203,75 @@ public class CustomRecyclerViewFragment extends Fragment {
         if (mFragmentListener != null) {
             mFragmentListener.onListFragmentInteractionCount(list.size());
         }
+    }
+
+    /**
+     * パラメーターを初期化する
+     */
+    public void initParam() {
+        list = null;
+        offset = 0;
+        isLoading = false;
+        autoScrollSize = 0;
+    }
+
+    /**
+     * 自動スクロールをする場合はtrue。しない場合はfalse
+     *
+     * @param lastInScreen
+     * @return
+     */
+    private boolean isAutoScroll(int lastInScreen) {
+        Log.d("autoScrollSize", "lastInScreen :" + lastInScreen);
+        // 1度もLoadしていない場合は、AutoScrollしない
+        if (autoScrollSize == 0) {
+            return false;
+        }
+
+        // loading中はAutoScrollしない
+        if (isLoading) {
+            return false;
+        }
+
+        //　画面下でない場合は、AutoScrollしない
+        if (autoScrollSize != lastInScreen) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * ロード
+     */
+    private void load() {
+        if (list.size() >= 1000) {
+            return;
+        }
+        List<Product> products = new ArrayList();
+        for (int i = 0; i < DEFAULT_OFFSET; i++) {
+            Product product = new Product();
+            product.name = "product " + (i + 1);
+            products.add(product);
+        }
+        setList(products);
+    }
+
+    private void setList(@Nullable  List<Product> products)  {
+        if (products == null || products.size() == 0) {
+            return;
+        }
+
+        int positionStart = products.size();
+        for (Product product : products) {
+            list.add(product);
+        }
+        customRecyclerViewFragmentAdapter.notifyItemRangeInserted(positionStart, products.size());
+
+        offset += list.size();
+        isLoading = false;
+        autoScrollSize += CustomRecyclerViewFragment.DEFAULT_OFFSET;
+        Log.d("autoScrollSize", "autoScrollSize :" + autoScrollSize);
     }
 
     /**
