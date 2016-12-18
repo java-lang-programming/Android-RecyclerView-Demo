@@ -53,4 +53,11 @@
         android:layout_height="wrap_content"
         android:text="FooterRecyclerView" />
 
+    <Button
+        android:id="@+id/search_recyclerView_btn"
+        android:layout_below="@+id/footer_recyclerView_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SearchRecyclerView" />
+
 </RelativeLayout>

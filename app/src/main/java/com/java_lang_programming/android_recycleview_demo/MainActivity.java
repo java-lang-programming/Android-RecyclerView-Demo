@@ -38,6 +38,7 @@ import com.java_lang_programming.android_recycleview_demo.ui.FooterRecyclerViewA
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
+import com.java_lang_programming.android_recycleview_demo.ui.SearchRecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -124,6 +125,16 @@ public class MainActivity extends AppCompatActivity
                 Intent footerRecyclerViewBtnIntent = new Intent(MainActivity.this,
                         FooterRecyclerViewActivity.class);
                 startActivity(footerRecyclerViewBtnIntent);
+            }
+        });
+
+        Button searchRecyclerViewBtn = (Button) findViewById(R.id.search_recyclerView_btn);
+        searchRecyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent searchRecyclerViewActivity = new Intent(MainActivity.this,
+                        SearchRecyclerViewActivity.class);
+                startActivity(searchRecyclerViewActivity);
             }
         });
     }

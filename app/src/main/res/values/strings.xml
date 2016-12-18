@@ -18,4 +18,8 @@
     <string name="validate_maximun_word">%1$sは%2$d文字以下です</string>
     <string name="validate_minimun_word">%1$sは%2$d文字以上です</string>
     <string name="validate_require">%1$sは必須入力です</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search_recycler_view">SearchRecyclerViewActivity</string>
+
+    <string name="searchable_hint">searchable_hint</string>
 </resources>

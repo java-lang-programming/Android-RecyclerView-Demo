@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:hint="@string/searchable_hint"
+    android:label="@string/app_name"
+    android:searchSuggestAuthority="com.java_lang_programming.android_recycleview_demo.provider.ItemSearchRecentSuggestionsProvider"
+    android:searchSuggestSelection=" ? ">
+
+</searchable><!--     android:searchSuggestAuthority="com.threesultimate.memoryking.provider.SearchRecentSuggestions"
+    android:searchSuggestSelection=" ?" --><!-- http://search-codelabs.appspot.com/codelabs/voice-search#11
+ android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"-->
