@@ -36,6 +36,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.java_lang_programming.android_recycleview_demo.R;
 import com.java_lang_programming.android_recycleview_demo.model.Item;
@@ -110,6 +111,15 @@ public class SearchRecyclerViewActivity extends AppCompatActivity implements Sea
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_insert:
+                break;
+            case R.id.action_clear_search_history:
+                SearchRecentSuggestions searchRecentSuggestions = new SearchRecentSuggestions(getApplicationContext(),
+                        ItemSearchRecentSuggestionsProvider.AUTHORITY,
+                        ItemSearchRecentSuggestionsProvider.MODE);
+
+                searchRecentSuggestions.clearHistory();
+                // show delete message
+                Toast.makeText(this, getString(R.string.action_clear_msg), Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

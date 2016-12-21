@@ -24,6 +24,8 @@ English
 
 [Android Application Development. Material design SearchView. Implement Search Suggestion.](http://java-lang-programming.com/en/articles/69)
 
+[Android Application Development. Material design SearchView. Delete the history of Search Suggestion.](http://java-lang-programming.com/en/articles/70)
+
 日本語
 
 [Androidアプリ開発 RecyclerViewで一覧画面を作成する](http://java-lang-programming.com/ja/articles/17)
@@ -37,6 +39,8 @@ English
 [Androidアプリ開発 RecyclerView 画面スクロールしながらデータをロードする](http://java-lang-programming.com/ja/articles/66)
 
 [Androidアプリ開発 Material design SearchView Search Suggestionを実装する](http://java-lang-programming.com/ja/articles/69)
+
+[Androidアプリ開発 Material design SearchView Search Suggestionの履歴を削除する](http://java-lang-programming.com/en/articles/70)
 
 Credits
 ------------

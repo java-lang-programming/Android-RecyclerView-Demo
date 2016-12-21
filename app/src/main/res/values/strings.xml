@@ -22,4 +22,7 @@
     <string name="title_activity_search_recycler_view">SearchRecyclerViewActivity</string>
 
     <string name="searchable_hint">searchable_hint</string>
+
+    <string name="action_clear_search_history">履歴削除</string>
+    <string name="action_clear_msg">clear history</string>
 </resources>
