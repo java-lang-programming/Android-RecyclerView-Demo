@@ -11,22 +11,22 @@
         android:layout_margin="@dimen/text_margin"
         android:textAppearance="?attr/textAppearanceListItem" />
 
-    <!-- android:textAppearance="?attr/textAppearanceListItem" -->
     <TextView
         android:id="@+id/content"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:maxLines="1"
-        android:scrollHorizontally="true"
-        style="@style/title"/>
+        android:scrollHorizontally="true" />
 
     <Button
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="delete"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:clickable="true"/>
+        android:layout_margin="@dimen/text_margin"
+        android:clickable="true"
+        android:text="delete" />
 </RelativeLayout>

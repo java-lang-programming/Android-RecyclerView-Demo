@@ -18,5 +18,6 @@
         android:name="com.java_lang_programming.android_recycleview_demo.ui.SearchRecyclerViewFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout="@layout/fragment_search_recycler_view" />
 </RelativeLayout>

@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity"
+    tools:context="com.java_lang_programming.android_recycleview_demo.article19.RecyclerViewDividerLineActivity"
     tools:showIn="@layout/activity_recycler_view_divider_line">
 
 </RelativeLayout>

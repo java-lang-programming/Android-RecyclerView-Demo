@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "com.java_lang_programming.android_recycleview_demo"
@@ -21,9 +21,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support:design:25.0.1'
-    compile 'com.android.support:recyclerview-v7:25.0.1'
-    compile 'com.android.support:support-v4:25.0.1'
+    compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion
+    compile 'com.android.support:design:' + rootProject.supportLibVersion
+    compile 'com.android.support:recyclerview-v7:' + rootProject.supportLibVersion
+    compile 'com.android.support:support-v4:' + rootProject.supportLibVersion
+    compile 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayout
     testCompile 'junit:junit:4.12'
 }

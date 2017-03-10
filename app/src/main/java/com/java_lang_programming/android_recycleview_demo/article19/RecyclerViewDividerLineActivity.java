@@ -1,7 +1,24 @@
-package com.java_lang_programming.android_recycleview_demo.ui;
+/**
+ * Copyright (C) 2017 Programming Java Android Development Project
+ * Programming Java is
+ * <p>
+ * http://java-lang-programming.com/
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+package com.java_lang_programming.android_recycleview_demo.article19;
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,7 +28,10 @@ import android.view.View;
 
 import com.java_lang_programming.android_recycleview_demo.R;
 
-public class RecyclerViewDividerLineActivity extends AppCompatActivity {
+/**
+ * Screen for RecyclerView RecyclerView.ItemDecoration.
+ */
+public class RecyclerViewDividerLineActivity extends AppCompatActivity implements RecyclerViewDividerLineFragment.OnFragmentInteractionListener {
 
     public final static String PRESENTER_TAG = "Presenter";
 
@@ -30,15 +50,5 @@ public class RecyclerViewDividerLineActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        FragmentManager fragmentManager = getFragmentManager();
-
-        RecyclerViewDividerLineFragment itemFragment = (RecyclerViewDividerLineFragment) fragmentManager.findFragmentById(R.id.recycler_view_swipe_frag);
-        if (itemFragment == null) {
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(itemFragment, PRESENTER_TAG);
-            fragmentTransaction.commit();
-        }
     }
-
 }

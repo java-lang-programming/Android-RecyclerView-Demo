@@ -26,6 +26,8 @@ English
 
 [Android Application Development. Material design SearchView. Delete the history of Search Suggestion.](http://java-lang-programming.com/en/articles/70)
 
+[Android Application Development. RecyclerView. Underline Using DividerItemDecoration.](http://java-lang-programming.com/ja/articles/79)
+
 日本語
 
 [Androidアプリ開発 RecyclerViewで一覧画面を作成する](http://java-lang-programming.com/ja/articles/17)
@@ -41,6 +43,8 @@ English
 [Androidアプリ開発 Material design SearchView Search Suggestionを実装する](http://java-lang-programming.com/ja/articles/69)
 
 [Androidアプリ開発 Material design SearchView Search Suggestionの履歴を削除する](http://java-lang-programming.com/en/articles/70)
+
+[Androidアプリ開発 RecyclerView DividerItemDecorationで下線を引く](http://java-lang-programming.com/ja/articles/79)
 
 Credits
 ------------

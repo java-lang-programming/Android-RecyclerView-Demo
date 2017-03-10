@@ -25,4 +25,7 @@
 
     <string name="action_clear_search_history">履歴削除</string>
     <string name="action_clear_msg">clear history</string>
+    <string name="title_activity_recycler_view_divider_item_decoration">
+        RecyclerViewDividerItemDecorationActivity
+    </string>
 </resources>

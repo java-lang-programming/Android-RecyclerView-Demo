@@ -32,11 +32,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.java_lang_programming.android_recycleview_demo.article79.RecyclerViewDividerItemDecorationActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.AutoScrollRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.CustomRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.FooterRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
-import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewDividerLineActivity;
+import com.java_lang_programming.android_recycleview_demo.article19.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.SearchRecyclerViewActivity;
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -135,6 +136,16 @@ public class MainActivity extends AppCompatActivity
                 Intent searchRecyclerViewActivity = new Intent(MainActivity.this,
                         SearchRecyclerViewActivity.class);
                 startActivity(searchRecyclerViewActivity);
+            }
+        });
+
+        Button recyclerViewDividerItemDecorationBtn = (Button) findViewById(R.id.recyclerView_divider_item_decoration_btn);
+        recyclerViewDividerItemDecorationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerViewDividerItemDecorationActivity = new Intent(MainActivity.this,
+                        RecyclerViewDividerItemDecorationActivity.class);
+                startActivity(recyclerViewDividerItemDecorationActivity);
             }
         });
     }
