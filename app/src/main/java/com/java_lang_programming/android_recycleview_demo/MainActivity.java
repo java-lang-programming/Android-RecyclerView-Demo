@@ -32,12 +32,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.java_lang_programming.android_recycleview_demo.article19.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.article79.RecyclerViewDividerItemDecorationActivity;
+import com.java_lang_programming.android_recycleview_demo.article82.RecyclerViewGooglePlusActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.AutoScrollRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.CustomRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.FooterRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewActivity;
-import com.java_lang_programming.android_recycleview_demo.article19.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewSwipeActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.SearchRecyclerViewActivity;
 
@@ -148,6 +149,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(recyclerViewDividerItemDecorationActivity);
             }
         });
+
+        Button recyclerViewGooglePlusBtn = (Button) findViewById(R.id.recyclerView_googlePlus_btn);
+        recyclerViewGooglePlusBtn.setOnClickListener(v -> {
+            moveRecyclerViewGooglePlusActivity();
+        });
     }
 
     @Override
@@ -205,5 +211,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void moveRecyclerViewGooglePlusActivity() {
+        Intent recyclerViewGooglePlusActivity = new Intent(MainActivity.this,
+                RecyclerViewGooglePlusActivity.class);
+        startActivity(recyclerViewGooglePlusActivity);
     }
 }

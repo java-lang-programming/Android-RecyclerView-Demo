@@ -1,0 +1,10 @@
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerView"
+    android:name="com.java_lang_programming.android_recycleview_demo.ui.RecyclerViewFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutManager="LinearLayoutManager"
+    tools:context="com.java_lang_programming.android_recycleview_demo.article82.RecyclerViewGooglePlusFragment"
+    tools:listitem="@layout/fragment_recycler_view_google_plus_item" />

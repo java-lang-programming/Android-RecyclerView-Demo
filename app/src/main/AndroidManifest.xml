@@ -60,6 +60,10 @@
         <activity
             android:name=".article79.RecyclerViewDividerItemDecorationActivity"
             android:label="@string/title_activity_recycler_view_divider_item_decoration"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".article82.RecyclerViewGooglePlusActivity"
+            android:label="@string/title_activity_recycler_view_google_plus"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

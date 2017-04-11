@@ -28,4 +28,5 @@
     <string name="title_activity_recycler_view_divider_item_decoration">
         RecyclerViewDividerItemDecorationActivity
     </string>
+    <string name="title_activity_recycler_view_google_plus">RecyclerViewGooglePlusActivity</string>
 </resources>
