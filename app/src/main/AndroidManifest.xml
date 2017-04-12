@@ -3,7 +3,7 @@
     package="com.java_lang_programming.android_recycleview_demo">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -64,7 +64,7 @@
         <activity
             android:name=".article82.RecyclerViewGooglePlusActivity"
             android:label="@string/title_activity_recycler_view_google_plus"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

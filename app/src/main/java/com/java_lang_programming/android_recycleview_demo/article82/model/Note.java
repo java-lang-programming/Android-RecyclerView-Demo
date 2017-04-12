@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2017 Programming Java Android Development Project
  * Programming Java is
  * <p>
@@ -19,8 +19,6 @@
 
 package com.java_lang_programming.android_recycleview_demo.article82.model;
 
-import java.util.List;
-
 /**
  * Model for Note
  */
@@ -31,7 +29,7 @@ public class Note extends Home {
     public String imagePath;
     public int plus;
     public boolean onPlus;
-    public List<Commnet> commnet;
+//    private List<Commnet> commnet;
 
     /**
      * click plus button

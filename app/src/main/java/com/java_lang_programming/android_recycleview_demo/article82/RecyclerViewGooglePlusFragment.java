@@ -163,7 +163,7 @@ public class RecyclerViewGooglePlusFragment extends Fragment {
      * Load
      */
     private void load() {
-        setList(NoteHelper.getNoteList(getActivity().getApplicationContext()));
+        setList(NoteHelper.getNoteList());
     }
 
     /**
@@ -177,9 +177,7 @@ public class RecyclerViewGooglePlusFragment extends Fragment {
         }
 
         int positionStart = noteList.size();
-        for (Note note : addNoteList) {
-            noteList.add(note);
-        }
+        noteList.addAll(addNoteList);
 
         try {
             recyclerViewFragmentAdapter.notifyItemRangeInserted(positionStart, addNoteList.size());

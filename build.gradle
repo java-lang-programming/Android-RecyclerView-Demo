@@ -29,6 +29,6 @@ task clean(type: Delete) {
 
 ext {
     buildToolsVersion = "25.0.2"
-    supportLibVersion = "25.1.1"
+    supportLibVersion = "25.3.1"
     constraintLayout = "1.0.2"
 }

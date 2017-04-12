@@ -1,23 +1,39 @@
-package com.java_lang_programming.android_recycleview_demo.article82.model;
+/*
+ * Copyright (C) 2017 Programming Java Android Development Project
+ * Programming Java is
+ * <p>
+ * http://java-lang-programming.com/
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-import android.content.Context;
+package com.java_lang_programming.android_recycleview_demo.article82.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by msuzuki on 2017/04/04.
+ * Helper for Mote Model.
  */
 public class NoteHelper {
 
     /**
      * return Menu List
      *
-     * @param context you should use ApplicationContext. ApplicationContext can get getApplicationContext().
      * @return the list objects of rows, null otherwise.
      */
-    public static List<Note> getNoteList(final Context context) {
-        List<Note> list = new ArrayList<Note>();
+    public static List<Note> getNoteList() {
+        List<Note> list = new ArrayList<>();
         create(list);
         return list;
     }
@@ -86,6 +102,28 @@ public class NoteHelper {
         note9.imagePath = "";
         note9.plus = 12;
 
+        Note note10 = new Note();
+        note10.id = 10;
+        note10.title = "test title 10";
+        note10.summary = "This is summary10. you can create Android Application.";
+        note10.imagePath = "";
+        note10.plus = 12;
+
+        Note note11 = new Note();
+        note11.id = 11;
+        note11.title = "test title 11";
+        note11.summary = "This is summary11. you can create Android Application.";
+        note11.imagePath = "";
+        note11.plus = 12;
+
+        Note note12 = new Note();
+        note12.id = 12;
+        note12.title = "test title 12";
+        note12.summary = "This is summary12. you can create Android Application.";
+        note12.imagePath = "";
+        note12.plus = 12;
+
+
         list.add(note1);
         list.add(note2);
         list.add(note3);
@@ -95,5 +133,8 @@ public class NoteHelper {
         list.add(note7);
         list.add(note8);
         list.add(note9);
+        list.add(note10);
+        list.add(note11);
+        list.add(note12);
     }
 }

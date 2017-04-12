@@ -26,6 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+        baseline file("lint-baseline.xml") // your choice of filename/path here
+    }
 }
 
 dependencies {
@@ -40,9 +44,9 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
-    androidTestCompile 'com.android.support:support-annotations:'  + rootProject.supportLibVersion
-    testCompile 'com.android.support:support-annotations:'  + rootProject.supportLibVersion
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion
+    testCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion
     testCompile 'junit:junit:4.12'
     testCompile 'com.android.support.test:runner:0.5'
     testCompile 'com.android.support.test:rules:0.5'
