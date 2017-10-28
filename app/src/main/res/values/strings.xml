@@ -29,4 +29,8 @@
         RecyclerViewDividerItemDecorationActivity
     </string>
     <string name="title_activity_recycler_view_google_plus">RecyclerViewGooglePlusActivity</string>
+    <string name="title_activity_recycler_view_diff_util">RecyclerViewDiffUtilActivity</string>
+
+    <string name="action_update">Update</string>
+    <string name="action_delete">Delete</string>
 </resources>

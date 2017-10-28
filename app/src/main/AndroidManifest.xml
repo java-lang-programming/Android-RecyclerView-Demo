@@ -65,6 +65,11 @@
             android:name=".article82.RecyclerViewGooglePlusActivity"
             android:label="@string/title_activity_recycler_view_google_plus"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".article90.java.RecyclerViewDiffUtilActivity"
+            android:label="@string/title_activity_recycler_view_diff_util"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".article90.kotlin.RecyclerViewDiffUtilKtActivity"></activity>
     </application>
 
 </manifest>

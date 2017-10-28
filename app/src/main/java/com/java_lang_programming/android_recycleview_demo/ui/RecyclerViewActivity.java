@@ -29,7 +29,7 @@ import android.view.View;
 
 import com.java_lang_programming.android_recycleview_demo.R;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity implements RecyclerViewFragment.OnListFragmentInteractionListener {
 
     public final static String PRESENTER_TAG = "Presenter";
 

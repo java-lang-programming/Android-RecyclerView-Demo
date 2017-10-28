@@ -1,6 +1,5 @@
 package com.java_lang_programming.android_recycleview_demo.ui.dialog;
 
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -146,19 +145,6 @@ public class CustomDialogFragment extends DialogFragment {
 //            mListener.onFragmentInteractionInsert(uri);
 //        }
 //    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        Log.d("CustomRecycler", "onAttach activity");
-        if (activity instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) activity;
-        } else {
-            throw new RuntimeException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
 
     @Override
     public void onAttach(Context context) {

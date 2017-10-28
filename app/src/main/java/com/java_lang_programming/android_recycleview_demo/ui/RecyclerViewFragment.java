@@ -29,7 +29,6 @@ import android.view.ViewGroup;
 
 import com.java_lang_programming.android_recycleview_demo.R;
 import com.java_lang_programming.android_recycleview_demo.ui.dummy.DummyContent;
-import com.java_lang_programming.android_recycleview_demo.ui.dummy.DummyContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.
@@ -106,6 +105,5 @@ public class RecyclerViewFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(DummyItem item);
     }
 }

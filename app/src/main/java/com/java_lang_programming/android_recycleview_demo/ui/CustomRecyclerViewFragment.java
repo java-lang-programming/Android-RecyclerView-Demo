@@ -1,6 +1,5 @@
 package com.java_lang_programming.android_recycleview_demo.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -103,18 +102,6 @@ public class CustomRecyclerViewFragment extends Fragment {
             load();
         }
         setCountUI();
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        Log.d("CustomRecycler", "onAttach activity");
-        if (activity instanceof OnFragmentInteractionListener) {
-            mFragmentListener = (OnFragmentInteractionListener) activity;
-        } else {
-            throw new RuntimeException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
@@ -248,7 +235,7 @@ public class CustomRecyclerViewFragment extends Fragment {
         if (list.size() >= 1000) {
             return;
         }
-        List<Product> products = new ArrayList();
+        List<Product> products = new ArrayList<>();
         for (int i = 0; i < DEFAULT_OFFSET; i++) {
             Product product = new Product();
             product.name = "product " + (i + 1);

@@ -74,4 +74,11 @@
         android:layout_below="@+id/recyclerView_divider_item_decoration_btn"
         android:text="RecyclerViewGooglePlus" />
 
+    <Button
+        android:id="@+id/recyclerView_diff_util_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerView_googlePlus_btn"
+        android:text="RecyclerViewDiffUtil" />
+
 </RelativeLayout>

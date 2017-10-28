@@ -35,6 +35,7 @@ import android.widget.Button;
 import com.java_lang_programming.android_recycleview_demo.article19.RecyclerViewDividerLineActivity;
 import com.java_lang_programming.android_recycleview_demo.article79.RecyclerViewDividerItemDecorationActivity;
 import com.java_lang_programming.android_recycleview_demo.article82.RecyclerViewGooglePlusActivity;
+import com.java_lang_programming.android_recycleview_demo.article90.kotlin.RecyclerViewDiffUtilKtActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.AutoScrollRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.CustomRecyclerViewActivity;
 import com.java_lang_programming.android_recycleview_demo.ui.FooterRecyclerViewActivity;
@@ -154,6 +155,11 @@ public class MainActivity extends AppCompatActivity
         recyclerViewGooglePlusBtn.setOnClickListener(v -> {
             moveRecyclerViewGooglePlusActivity();
         });
+
+        Button recyclerViewDiffUtilBtn = findViewById(R.id.recyclerView_diff_util_btn);
+        recyclerViewDiffUtilBtn.setOnClickListener(v -> {
+            moveRecyclerViewDiffUtilActivity();
+        });
     }
 
     @Override
@@ -217,5 +223,13 @@ public class MainActivity extends AppCompatActivity
         Intent recyclerViewGooglePlusActivity = new Intent(MainActivity.this,
                 RecyclerViewGooglePlusActivity.class);
         startActivity(recyclerViewGooglePlusActivity);
+    }
+
+    private void moveRecyclerViewDiffUtilActivity() {
+        // RecyclerViewDiffUtilActivity
+        // RecyclerViewDiffUtilKtActivity
+        Intent recyclerViewDiffUtilActivity = new Intent(MainActivity.this,
+                RecyclerViewDiffUtilKtActivity.class);
+        startActivity(recyclerViewDiffUtilActivity);
     }
 }

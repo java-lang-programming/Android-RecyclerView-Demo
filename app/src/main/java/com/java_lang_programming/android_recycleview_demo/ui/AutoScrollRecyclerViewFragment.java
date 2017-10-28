@@ -219,7 +219,7 @@ public class AutoScrollRecyclerViewFragment extends Fragment {
         if (list.size() >= 1000) {
             return;
         }
-        List<Item> items = new ArrayList();
+        List<Item> items = new ArrayList<>();
         for (int i = 0; i < DEFAULT_OFFSET; i++) {
             Item item = new Item();
             item.name = "product " + (list.size() + i);
